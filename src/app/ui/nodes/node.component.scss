@@ -1,0 +1,32 @@
+/* Parameters */
+
+$node-parameter-margin-horizontal: 20px !default;
+
+/* Rules */
+
+:host {
+  display: block;
+  position: absolute;
+  transform-origin: 0 0;
+}
+
+:host .node-title {
+  font-weight: bold;
+  font-size: large;
+}
+
+:host .node-parameters {
+  margin-left: $node-parameter-margin-horizontal;
+  margin-right: $node-parameter-margin-horizontal;
+  select {
+    font-size: smaller;
+  }
+}
+
+:host .node-parameters .form-control {
+  width: inherit;
+}
+
+.node-title {
+  margin: 5px;
+}

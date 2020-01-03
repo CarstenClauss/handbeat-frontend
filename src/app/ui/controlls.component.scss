@@ -1,0 +1,7 @@
+$backgorund-color: lightslategray !default;
+
+$controlls-background-color: lighten($backgorund-color, 10%) !default;
+
+:host {
+  background-color: $controlls-background-color;
+}

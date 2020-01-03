@@ -1,0 +1,36 @@
+<div class="d-flex flex-row">
+  <div class="d-flex flex-row">
+    <span
+      #yAxis
+      class="align-self-center clickable-axis"
+      [ngClass]="{'connected-axis': __yConnected}"
+      draggable="true"
+      (dragstart)="__onAxisDragStart($event, 'y')"
+      (dblclick)="__handControlService.disconnect({hand: hand, axis: 'y'})"
+    >
+      y
+    </span>
+  </div>
+  <div class="flex-grow-1">
+    <svg class="hand-control-preview" xmlns:svg="http://www.w3.org/1999/html" viewBox="0 0 100 100">
+      <svg:line x1="50" y1="0" x2="50" y2="100" class="axis-line"/>
+      <svg:line x1="0" y1="50" x2="100" y2="50" class="axis-line"/>
+      <svg:circle *ngIf="__currentHandPosition" [attr.cx]="__currentHandPosition.x" [attr.cy]="__currentHandPosition.y" r="3" class="hand-position"/>
+    </svg>
+  </div>
+</div>
+<div class="d-flex flex-row">
+  <div>&nbsp;</div>
+  <div class="d-flex flex-column flex-grow-1">
+    <span
+      #xAxis
+      class="align-self-center clickable-axis"
+      [ngClass]="{'connected-axis': __xConnected}"
+      draggable="true"
+      (dragstart)="__onAxisDragStart($event, 'x')"
+      (dblclick)="__handControlService.disconnect({hand: hand, axis: 'x'})"
+    >
+      x
+    </span>
+  </div>
+</div>

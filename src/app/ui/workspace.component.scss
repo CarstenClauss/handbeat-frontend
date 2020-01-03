@@ -1,0 +1,16 @@
+$backgorund-color: url(../../assets/backgorund3.png) !default;
+
+$workspace-background-color: $backgorund-color !default;
+
+:host {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: $workspace-background-color;
+}
+
+.workspace-container {
+  position: absolute;
+}

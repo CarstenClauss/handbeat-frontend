@@ -1,0 +1,56 @@
+/* Parameters */
+
+$node-socket-border-radius: 5px !default;
+
+/* Rules */
+:host {
+  display: flex;
+  padding: 5px;
+  background-color: transparentize(gray, 0.75);
+}
+
+:host:not(.socket-left) {
+  border-left: 1px solid;
+}
+
+:host:not(.socket-top) {
+  border-top: 1px solid;
+}
+
+:host:not(.socket-bottom) {
+  border-bottom: 1px solid;
+}
+
+:host:not(.socket-right) {
+  border-right: 1px solid;
+}
+
+:host:not(.socket-left):not(socket-top) {
+  border-top-left-radius: $node-socket-border-radius;
+}
+
+:host:not(.socket-left):not(.socket-bottom) {
+  border-bottom-left-radius: $node-socket-border-radius;
+}
+
+:host:not(.socket-right):not(.socket-top) {
+  border-top-right-radius: $node-socket-border-radius;
+}
+
+:host:not(.socket-right):not(.socket-bottom) {
+  border-bottom-right-radius: $node-socket-border-radius;
+}
+
+:host > app-node-socket {
+  display: flex !important;
+}
+
+:host.socket-top, :host.socket-bottom {
+  flex-direction: row;
+  height: 3em;
+}
+
+:host.socket-left, :host.socket-right {
+  flex-direction: column;
+  width: 3em;
+}

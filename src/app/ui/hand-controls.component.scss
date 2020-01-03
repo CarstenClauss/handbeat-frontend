@@ -1,0 +1,13 @@
+$backgorund-color: lightslategray !default;
+$hand-controls-bg-color: lighten($backgorund-color, 20%) !default;
+
+:host {
+  display: block;
+}
+
+.hand-controls {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: $hand-controls-bg-color;
+}

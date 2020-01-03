@@ -1,0 +1,98 @@
+<div class="d-flex">
+  <div class="d-flex flex-column">
+    <div class="node-title align-self-center">Filter</div>
+    <div class="d-flex flex-row justify-content-between">
+      <app-node-socket-group
+        class="socket-left align-self-center"
+        (mouseenter)="__isDragable = false"
+        (mouseleave)="__isDragable = true">
+        <ng-template #sockets>
+          <app-node-socket [owner]="this" [direction]="'in'" (mouseenter)="__isDragable = false" (mouseleave)="__isDragable = true"></app-node-socket>
+        </ng-template>
+      </app-node-socket-group>
+      <div class="node-parameters">
+        <form [formGroup]="__parametersForm">
+          <div class="form-group">
+            <label for="type">Type</label>
+            <select
+              id="type"
+              class="form-control"
+              formControlName="type"
+              (mouseenter)="__isDragable = false"
+              (mouseleave)="__isDragable = true">
+              <option value="lowpass">Lowpass</option>
+              <option value="highpass">Highpass</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="frequency">Frequency</label>
+            <input
+              id="frequency"
+              type="range"
+              class="form-control-range"
+              min="4.3"
+              max="14.3"
+              value="14.3"
+              step="0.001"
+              formControlName="frequency"
+              appHandAxisControl
+              [ngbTooltip]="frequencyTooltip"
+              (mouseenter)="__isDragable = false"
+              (mouseleave)="__isDragable = true">
+            <ng-template #frequencyTooltip>{{frequencyExp|number:'.3'}}</ng-template>
+          </div>
+          <div class="form-group">
+            <label for="q">Q</label>
+            <input
+              id="q"
+              type="range"
+              class="form-control-range"
+              min="0"
+              max="25"
+              value="0"
+              step="0.001"
+              formControlName="q"
+              appHandAxisControl
+              [ngbTooltip]="qTooltip"
+              (mouseenter)="__isDragable = false"
+              (mouseleave)="__isDragable = true">
+            <ng-template #qTooltip>{{q|number:'.3'}}</ng-template>
+          </div>
+          <div class="form-group">
+            <label for="gain">Gain</label>
+            <input
+              id="gain"
+              type="range"
+              class="form-control-range"
+              min="0"
+              max="1"
+              value="1"
+              step="0.001"
+              formControlName="gain"
+              appHandAxisControl
+              [ngbTooltip]="gainTooltip"
+              (mouseenter)="__isDragable = false"
+              (mouseleave)="__isDragable = true">
+            <ng-template #gainTooltip>{{gain|number:'.3'}}</ng-template>
+          </div>
+        </form>
+      </div>
+      <app-node-socket-group
+        class="socket-right align-self-center"
+        (mouseenter)="__isDragable = false"
+        (mouseleave)="__isDragable = true">
+        <ng-template #sockets>
+          <app-node-socket [owner]="this" [direction]="'out'" (mouseenter)="__isDragable = false" (mouseleave)="__isDragable = true"></app-node-socket>
+        </ng-template>
+      </app-node-socket-group>
+    </div>
+  </div>
+</div>
+<context-menu #nodeContextMenu>
+  <ng-template
+    contextMenuItem
+    (execute)="remove()"
+  >
+    Remove
+  </ng-template>
+</context-menu>

@@ -1,0 +1,27 @@
+$node-socket-audio-color: #6633cc !default;
+$node-socket-parameter-color: #cc3366 !default;
+$node-socket-note-color: #99cc33 !default;
+
+:host {
+  display: flex;
+  font-weight: bold;
+  line-height: 0.8em;
+  font-size: 200%;
+  justify-content: center;
+  align-content: center;
+  cursor: pointer;
+  /* TODO: find out what is used under linux */
+  font-family: "Courier New", sans-serif;
+}
+
+:host.type-audio {
+  color: $node-socket-audio-color;
+}
+
+:host.type-parameter {
+  color: $node-socket-parameter-color;
+}
+
+:host.type-note {
+  color: $node-socket-note-color;
+}

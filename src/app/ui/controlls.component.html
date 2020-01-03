@@ -1,0 +1,17 @@
+<div class="d-flex flex-row justify-content-between w-100">
+  <div></div>
+  <div class="d-flex flex-row">
+    <button class="play-btn btn btn-no-style" type="button" (click)="play()">
+      <fa-icon icon="play"></fa-icon>
+    </button>
+    <button class="pause-btn btn btn-no-style" [class.btn-dark]="__isPaused" type="button" (click)="pause()">
+      <fa-icon icon="pause"></fa-icon>
+    </button>
+    <button class="stop-btn btn btn-no-style" type="button" (click)="stop()">
+      <fa-icon icon="stop"></fa-icon>
+    </button>
+  </div>
+  <div class="d-flex flex-row align-self-end">
+    <button class="btn btn-no-style" type="button" (click)="toggleHandControls.emit()"><fa-icon icon="hand-paper" class="hand-controls-toggle"></fa-icon></button>
+  </div>
+</div>

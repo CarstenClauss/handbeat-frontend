@@ -1,0 +1,120 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+/* Preconfigure variables */
+
+$brand-color: $primary;
+
+$colors: (
+  "brand": $brand-color
+);
+
+/* End preconfigure variables */
+
+@import "~bootstrap/scss/variables";
+
+/* Place variable overrides here */
+
+
+/* End variable overrides*/
+
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/input-group";
+@import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/jumbotron";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/media";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/print";
+
+/* Custom styles */
+
+$backgorund-color: lightslategray;
+
+$controlls-background-color: lighten($backgorund-color, 10%);
+$context-menu-background-color: darken($backgorund-color, 10%);
+$context-menu-foreground-color: lighten($backgorund-color, 20%);
+
+$hand-controls-bg-color: lighten($backgorund-color, 20%);
+
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
+.font-titillium {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.btn-no-style {
+  border: none;
+
+  &:focus,
+  &.focus {
+    box-shadow: none;
+  }
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.slider-vertical {
+  writing-mode: bt-lr;
+  -webkit-appearance: slider-vertical;
+}
+
+/* START context menu material override */
+
+.ngx-contextmenu {
+  background-color: transparent;
+  context-menu-content {
+    display: block;
+    .dropdown {
+      * {
+        background-color: $context-menu-background-color;
+      }
+      ul li {
+        padding-left: 10px;
+        padding-right: 10px;
+        a {
+          text-decoration: none;
+          font-weight: bold;
+          font-family: 'Titillium Web', sans-serif;
+          color: $context-menu-foreground-color;
+
+          &:hover {
+            color: lighten($context-menu-foreground-color, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* END context menu material override */
+
+/* END Custom styles */

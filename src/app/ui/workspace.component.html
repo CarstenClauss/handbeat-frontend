@@ -1,0 +1,18 @@
+<span [style.transform]="__transform" class="workspace-container">
+  <ng-container #workspaceContainerItems></ng-container>
+  <app-node-connection
+    *ngFor="let connection of __nodeConnections"
+    [from]="connection.from"
+    [to]="connection.to"
+    [contextMenu]="_nodeConnectionContextMenu"
+    [contextMenuSubject]="connection"
+  ></app-node-connection>
+</span>
+<context-menu #nodeConnectionContextMenu>
+  <ng-template
+    contextMenuItem
+    (execute)="removeNodeConnection($event.item)"
+  >
+    Remove
+  </ng-template>
+</context-menu>

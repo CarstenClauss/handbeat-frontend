@@ -1,0 +1,42 @@
+$backgorund-color: lightslategray !default;
+
+$hand-control-base-color: $backgorund-color !default;
+$hand-control-axis-line-color: darken($hand-control-base-color, 10%) !default;
+$hand-control-hand-position-color: darken($hand-control-base-color, 20%) !default;
+$hand-control-text-color: darken($hand-control-base-color, 10%) !default;
+
+$hand-control-preview-size: 100px !default;
+
+:host {
+  display: block;
+  margin: 5px;
+}
+
+svg {
+  //background-color: $hand-control-graph-bg-color;
+  border-radius: 3px;
+  .axis-line {
+    stroke: $hand-control-axis-line-color;
+  }
+
+  .hand-position {
+    fill: $hand-control-hand-position-color;
+  }
+}
+
+.clickable-axis {
+  font-weight: bold;
+  cursor: pointer;
+
+  color: $hand-control-text-color;
+
+  &.connected-axis {
+    color: black;
+  }
+}
+
+.hand-control-preview {
+  width: $hand-control-preview-size;
+  height: $hand-control-preview-size;
+  margin: 3px;
+}

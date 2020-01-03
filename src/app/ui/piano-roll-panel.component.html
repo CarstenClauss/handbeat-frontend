@@ -1,0 +1,10 @@
+<div class="d-flex flex-column w-100 h-100">
+  <div class="d-flex flex-column justify-content-center w-100">
+    <button class="btn" type="button">
+      <fa-icon [icon]="__collapseExpandIcon" (click)="collapsed = !collapsed"></fa-icon>
+    </button>
+  </div>
+  <div class="flex-row w-100 piano-rolls-container" [@openClosePianoRolls]="__collapseExpandIconAnimationState">
+    <ng-container #pianoRolls></ng-container>
+  </div>
+</div>

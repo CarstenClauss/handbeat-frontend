@@ -1,0 +1,23 @@
+<canvas #webcamCanvas style="display: none;"></canvas>
+<div class="position-absolute w-100 h-100">
+  <div class="d-flex flex-column justify-content-between h-100">
+    <app-controlls class="d-flex flex-column foreground" (toggleHandControls)="showHandControls = !showHandControls"></app-controlls>
+    <div class="d-flex flex-row justify-content-end flex-grow-1">
+      <div class="d-flex flex-column justify-content-start">
+        <app-hand-controls *ngIf="showHandControls" @handControls class="foreground"></app-hand-controls>
+      </div>
+    </div>
+    <app-piano-roll-panel class="foreground"></app-piano-roll-panel>
+  </div>
+</div>
+<app-workspace [contextMenu]="_contextMenu" #workspace>
+</app-workspace>
+<context-menu>
+  <ng-template
+    *ngFor="let nodeType of _addableNodeTypes"
+    contextMenuItem
+    (execute)="addNode($event.event, nodeType.nodeType)"
+  >
+    {{nodeType.name}}
+  </ng-template>
+</context-menu>
